@@ -6,10 +6,18 @@ namespace Tabuleiro
     {
         static void Main(string[] args)
         {
-            Tabuleiro tabuleiro = new Tabuleiro(8, 8);
-            tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Preta), new Posicao(0, 0));
+            try
+            {
+                Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+                tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Preta), new Posicao(0, 0));
+                tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Preta), new Posicao(0, 9));
 
-            Tela.imprimirTabuleiro(tabuleiro);
+                Tela.imprimirTabuleiro(tabuleiro);
+            }
+            catch(TabuleiroException e)
+            {
+                Console.Write(e.Message);
+            }
 
             Console.ReadLine();
         }
