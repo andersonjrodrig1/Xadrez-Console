@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xadrez;
 
 namespace Tabuleiro
 {
@@ -40,6 +41,15 @@ namespace Tabuleiro
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }
+        }
+
+        public static PosicaoXadrez lerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = Convert.ToInt32(s[1] + "");
+
+            return new PosicaoXadrez(coluna, linha);
         }
     }
 }
